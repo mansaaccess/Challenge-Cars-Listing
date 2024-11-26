@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cars Listing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      color: #007bff;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    ul li {
+      background: #fff;
+      margin: 10px 0;
+      padding: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cars Listing</h1>
+    <ul id="cars-list">
+     
+    </ul>
+    <button onclick="addMercedes()">Add Mercedes-Benz</button>
+  </div>
+
+  <script>
+    var cars = ['toyota', 'honda', 'mazda', 'mitsubishi', 'tesla', 'lexus'];
+
+    console.log('First car:', cars[0]);
+    console.log('Last car:', cars[cars.length - 1]);
+
+    function displayCars() {
+      var list = document.getElementById('cars-list');
+      list.innerHTML = '';
+      for (var i = 0; i < cars.length; i++) {
+        var li = document.createElement('li');
+        li.textContent = cars[i];
+        list.appendChild(li);
+        console.log(cars[i]);
+      }
+    }
+
+    function addMercedes() {
+      cars.push('mercedes-benz');
+      console.log('Added:', 'mercedes-benz');
+      displayCars();
+    }
+
+    displayCars();
+  </script>
+</body>
+</html>
